@@ -1,0 +1,23 @@
+<div class="container mt-4 col-md-5">
+    <h2>Crear tarea</h2>
+
+    <div class="seccionFormulario row d-flex justify-content-center align-items-center">
+        <div class="col-md-11">
+            <form (ngSubmit)="crearTarea()">
+                <br>
+                <input class="form-control" type="text" name="nombre" [(ngModel)]="tarea.nombre"  placeholder="Nombre de la tarea">
+                <br>
+                <input class="form-control" type="text" name="grupo" [(ngModel)]="tarea.grupo" placeholder="Grupo">
+                <br>
+                <textarea class="form-control" name="descripcion" [(ngModel)]="tarea.contenido" rows="10" placeholder="Contenido" cols="40"></textarea>
+                <br>
+                <input class="form-control" type="datetime-local" [(ngModel)]="tarea.fecha_limite" name="fecha_limite" placeholder="Fecha limite">
+                <br>
+                <div class="row justify-content-end">
+                <button type="submit"  class="botonCrear btn btn-dark ">Crear</button>
+                </div>
+                <br>
+            </form>
+         </div>
+    </div>
+</div>
