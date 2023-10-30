@@ -1,0 +1,11 @@
+* {
+    font-family: 'Anek';
+    font-style: normal;
+}
+
+.app-container {
+    background-color: #F2F3F5;
+    font-family: 'Lohit';
+    min-height: 100vh;
+
+}

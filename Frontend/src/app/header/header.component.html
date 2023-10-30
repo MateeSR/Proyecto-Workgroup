@@ -38,16 +38,23 @@
           </fa-icon>
         </a>
       </li>
-      <li>
-        <a class="nav-link" href="#">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
           <fa-icon [icon]="faUser" class="fa-2xl">
           </fa-icon>
         </a>
+        <ul class="dropdown-menu ">
+          <li>
+            <a class="dropdown-item" href="3"><p class="perfil">Mateo</p></a>
+            <a class="dropdown-item" href="3"><p class="perfil">Mateo</p></a>
+            <a class="dropdown-item" (click)="logout()"><p class="perfil">Cerrar sesion</p></a>
+          </li>
+        </ul>
       </li>
-      <li>
-        <p class="perfil">Perfil</p>
-
-      </li>
+      
+      
+  
+      
     </ul>
     
     </div>

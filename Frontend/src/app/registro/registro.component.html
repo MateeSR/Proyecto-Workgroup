@@ -4,19 +4,20 @@
             <img src="../../assets/images/v1_35.png" alt="Logo de Workgroup"> 
         </div>
         <br>
+        <form #dataForm="ngForm" (ngSubmit)="registroUsuario(dataForm.value)">
         <div class="formularios container ">
             <div class="p-2 d-flex justify-content-center">
-                <input class="nombreapellido form-control" type="text" name="usuario" placeholder="Nombre">
-                <input class="nombreapellido form-control" type="text" name="usuario" placeholder="Apellido">
+                <input class="nombreapellido form-control" type="text" ngModel name="nombre" placeholder="Nombre">
+                <input class="nombreapellido form-control" type="text" ngModel name="apellido" placeholder="Apellido">
             </div>
             <div class="p-2 d-flex justify-content-center">
-                <input class="form-control" type="password" name="contraseña" placeholder="Correo electronico">
+                <input class="form-control" type="email" ngModel name="email" placeholder="Correo electronico">
             </div>
             <div class="p-2 d-flex justify-content-center">
-                <input class="form-control" type="password" name="contraseña" placeholder="Contraseña">
+                <input class="form-control" type="password" ngModel name="password" placeholder="Contraseña">
             </div>
             <div class="p-2 d-flex justify-content-center">
-                <input class="form-control" type="password" name="contraseña" placeholder="Confirmar contraseña">
+                <input class="form-control" type="password" ngModel name="c_password" placeholder="Confirmar contraseña">
             </div>
         </div>
         <div class="botonesCrearIngresar">
@@ -30,8 +31,10 @@
                 <div class="p-4"></div>
                 <div class="p-2">
                     <button type="submit" class="botonEnviar btn btn-dark">Registrarme</button>
+                         
                 </div>
+       
             </div>
         </div>
-    </div>
+    </form>
 </div>

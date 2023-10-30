@@ -13,6 +13,7 @@ import { ModalBorrarTareaComponent } from './modal-borrar-tarea/modal-borrar-tar
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from './header/header.component';
     ModalBorrarTareaComponent,
     LoginComponent,
     RegistroComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
