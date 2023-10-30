@@ -10,6 +10,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ModalBorrarTareaComponent } from './modal-borrar-tarea/modal-borrar-tarea.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ModalBorrarTareaComponent } from './modal-borrar-tarea/modal-borrar-tar
     TareasComponent,
     CrearTareasComponent,
     ModificarTareasComponent,
-    ModalBorrarTareaComponent
+    ModalBorrarTareaComponent,
+    LoginComponent,
+    RegistroComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

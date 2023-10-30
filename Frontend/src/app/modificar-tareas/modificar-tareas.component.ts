@@ -34,7 +34,7 @@ export class ModificarTareasComponent implements OnInit {
   }
   modificarTarea() {
     this.tareaService.modificarTarea(this.tarea).subscribe(() => {
-      this.router.navigate(['']);
+      this.router.navigate(['tareas']);
     });
   }
 

@@ -1,0 +1,40 @@
+* {
+    font-family: 'Anek';
+    font-style: normal;
+}
+
+
+.fondo {
+    background: rgba(242,243,245,1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login {
+    background: rgba(255,255,255,1);
+    border: 1px solid #828282;
+    width: 603px;
+    height: 621px;
+    
+}
+
+input {
+    background-color: #D9D9D9;
+    font-size: 125%; 
+
+
+}
+.botonEnviar {
+    background-color: black;  
+}
+
+
+
+.botonesCrearIngresar, button {
+    font-size: 110%; 
+
+
+
+}

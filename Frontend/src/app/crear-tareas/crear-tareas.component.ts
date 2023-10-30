@@ -26,7 +26,7 @@ export class CrearTareasComponent implements OnInit {
   crearTarea() {
     this.tareaService.crearTarea(this.tarea).subscribe(res => {
       this.listarTareas();
-      this.router.navigate(['']);
+      this.router.navigate(['tareas']);
    
     })
     }

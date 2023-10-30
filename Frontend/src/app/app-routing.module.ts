@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { CrearTareasComponent } from './crear-tareas/crear-tareas.component';
 import { ModificarTareasComponent } from './modificar-tareas/modificar-tareas.component';
 import { TareasComponent } from './tareas/tareas.component';
-import { ModalBorrarTareaComponent } from './modal-borrar-tarea/modal-borrar-tarea.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
 {
-path: "",
+path: "tareas",
 component: TareasComponent
 
 },
@@ -17,14 +18,22 @@ component: TareasComponent
   component: CrearTareasComponent
 },
 {
-  path: "modificarTarea/:id", 
+  path: "tareas/modificarTarea/:id", 
   component: ModificarTareasComponent
 },
-{ 
-  path:"modalTarea",
-  component:ModalBorrarTareaComponent
 
+{
+  path: "",
+  component: LoginComponent
+},
+
+{
+  path: "registro",
+  component: RegistroComponent
 }
+
+
+
 
 
 ];
