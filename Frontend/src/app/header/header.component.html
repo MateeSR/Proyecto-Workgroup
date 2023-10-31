@@ -7,16 +7,19 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <a class="navbar-brand mt-2 mt-lg-0" href="#">
-        <img
-          src="../../assets/images/v1_35.png"
-
-          class="logo"
-          alt="Logo Workgroup"
-          loading="lazy"
-        />
-      </a>
+      
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="navbar-brand">
+            <img
+              src="../../assets/images/v1_35.png"
+    
+              class="logo"
+              alt="Logo Workgroup"
+              loading="lazy"
+            />
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
             <fa-icon [icon]="faUsers" class="fa-2xl">
@@ -25,28 +28,33 @@
         </li>
       </ul>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li>
+
+    <ul class="nav navbar-nav me-auto mb-2 mb-lg-0 navbar-right">
+      <li class="nav-item">
         <a class="nav-link" href="#">
           <fa-icon [icon]="faBook" class="fa-2xl">
           </fa-icon>
         </a>
       </li>
-      <li>
+      <li class="nav-item">
         <a class="nav-link" href="#">
           <fa-icon [icon]="faBell" class="fa-2xl">
           </fa-icon>
         </a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+
+      <li class="nav-item dropdown d-flex flex-row">
+
+        <a class="nav-link d-flex flex-row" href="#" role="button" data-bs-toggle="dropdown">
+          
           <fa-icon [icon]="faUser" class="fa-2xl">
           </fa-icon>
+          <p class="perfil">{{ usuario.nombre }}</p>
         </a>
-        <ul class="dropdown-menu ">
+
+        <ul class="dropdown-menu dropdownPerfil">
           <li>
-            <a class="dropdown-item" href="3"><p class="perfil">Mateo</p></a>
-            <a class="dropdown-item" href="3"><p class="perfil">Mateo</p></a>
+            <a class="dropdown-item" href=""><p class="perfil">Mateo</p></a>
             <a class="dropdown-item" (click)="logout()"><p class="perfil">Cerrar sesion</p></a>
           </li>
         </ul>

@@ -10,15 +10,40 @@ import { StatusService } from '../Servicios/status.service';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent {
+  
+  
+  public sinCredenciales: boolean = false;
+  public passwordSinCoincidir: boolean = false;
+
+
+
 
   constructor(private api: AuthService, private router: Router, private status: StatusService) {}
 
   registroUsuario(credentials: any) {
+    if (
+      !credentials.nombre ||
+      !credentials.apellido ||
+      !credentials.email || 
+      !credentials.password || 
+      !credentials.c_password) 
+      {
+      this.sinCredenciales = true;
+      return;
+    }
+
+    if (credentials.password !== credentials.c_password) {
+      this.passwordSinCoincidir = true;
+      return;
+    }
+
+
+
     this.api.registro(credentials).subscribe(
-      (resultado: any) => {
+      (res: any) => {
         this.router.navigate(['/login']);
       },
-      (error: any) => {
+      (error) => {
         console.error('Error al registrar usuario:', error);
       }
     );

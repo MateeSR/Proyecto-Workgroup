@@ -11,13 +11,13 @@
         <br>
         <form #dataForm="ngForm" (ngSubmit)="sendLogin(dataForm.value)">
             <div class="p-2 d-flex justify-content-center">
-                <input class="form-control" type="text" ngModel  name="email" placeholder="Usuario">
+                <input class="form-control" type="text" ngModel  name="email" placeholder="Correo electrónico">
             </div>
             <div class="p-2 d-flex justify-content-center">
                 <input class="form-control" type="password" ngModel name="password" placeholder="Contraseña">
             </div>
             <div class="d-flex flex-row justify-content-start">
-                <b *ngIf="loginError" class="credencialesInvalidas"> Credenciales invalidas </b>
+                <b *ngIf="loginError" class="credencialesInvalidas"> Los datos no son correctos </b>
             </div>
             <div class="botonesCrearIngresar">
                 <div class="d-flex flex-column">

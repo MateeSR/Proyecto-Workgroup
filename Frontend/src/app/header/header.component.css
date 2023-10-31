@@ -5,11 +5,31 @@
 
 .logo {
     width: 75px;
+    margin-top: -10px;
 
 }
 
-.perfil {
+.perfil  {
 
 margin-top: 15px;
+margin-left: 10px;
+
+}
+
+.nav-item {
+
+    margin-top: 15px;
+    margin-left: 10px;
+    
+
+
+}
+
+
+.dropdownPerfil {
+
+    margin-left: -65px;
+
+
 
 }

@@ -15,14 +15,11 @@ export class LoginComponent {
   public loginStatus: boolean = false;
   
   constructor(private api: AuthService, private router: Router, private status: StatusService) {}
-  
-
-
   sendLogin(credentials: any){
 
     return this.api.sendLogin(credentials).subscribe( 
-      (resultado:any) => {
-        localStorage.setItem('accessToken', JSON.stringify(resultado["access_token"]));
+      (res:any) => {
+        localStorage.setItem('accessToken', res.access_token);
         this.status.isLoggedIn = true;
         this.router.navigateByUrl('/');
       },

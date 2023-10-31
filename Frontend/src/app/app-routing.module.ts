@@ -13,13 +13,13 @@ import { autenticacionGuard } from './guards/autenticacion.guard';
 const routes: Routes = [
 {
 path: "tareas",
-component: TareasComponent
+component: TareasComponent, canActivate: [autenticacionGuard]
 
 },
 
 {
   path: "crearTarea", 
-  component: CrearTareasComponent
+  component: CrearTareasComponent, canActivate: [autenticacionGuard]
 },
 {
   path: "tareas/modificarTarea/:id", 
