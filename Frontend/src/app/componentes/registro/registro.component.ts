@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../Servicios/auth.service';
+import { AuthService } from 'src/app/Servicios/auth.service';
 import { Router } from '@angular/router';
-import { StatusService } from '../Servicios/status.service';
+import { StatusService } from 'src/app/Servicios/status.service';
 
 
 @Component({

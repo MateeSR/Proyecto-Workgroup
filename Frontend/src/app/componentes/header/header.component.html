@@ -10,7 +10,7 @@
       
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="navbar-brand">
+          <a class="navbar-brand" routerLink="">
             <img
               src="../../assets/images/v1_35.png"
     
@@ -30,12 +30,24 @@
     </div>
 
     <ul class="nav navbar-nav me-auto mb-2 mb-lg-0 navbar-right">
-      <li class="nav-item">
-        <a class="nav-link" href="#">
+
+      <li class="nav-item dropdown d-flex flex-row">
+        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
           <fa-icon [icon]="faBook" class="fa-2xl">
           </fa-icon>
         </a>
+
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" routerLink="/tareas"><p class="perfil">Tareas</p></a>
+          </li>
+        </ul>
+
+
       </li>
+
+
+
       <li class="nav-item">
         <a class="nav-link" href="#">
           <fa-icon [icon]="faBell" class="fa-2xl">
@@ -54,7 +66,7 @@
 
         <ul class="dropdown-menu dropdownPerfil">
           <li>
-            <a class="dropdown-item" href=""><p class="perfil">Mateo</p></a>
+            <a class="dropdown-item" routerLink="/perfil"><p class="perfil">Perfil</p></a>
             <a class="dropdown-item" (click)="logout()"><p class="perfil">Cerrar sesion</p></a>
           </li>
         </ul>

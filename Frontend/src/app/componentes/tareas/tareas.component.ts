@@ -35,6 +35,8 @@ export class TareasComponent implements OnInit {
     })
  }
 
+
+
     faTrash = faTrash;
     faPenToSquare = faPenToSquare;
 

@@ -11,15 +11,16 @@ export class AuthService {
   private url = 'http://127.0.0.1:8001/api/v1/user';
   private loginUrl = "http://127.0.0.1:8001/oauth/token";
   private logoutUrl = "http://127.0.0.1:8001/api/v1/logout";
-  private perfilUrl = "http://127.0.0.1:8001/api/v1/perfil";
+  private perfilUrl = "http://127.0.0.1:8001/api/v1/user";
+  private modificacionUrl = "http://127.0.0.1:8001/api/v1/user"
 
   constructor(private http: HttpClient) { }
   
   sendLogin(credentials: any){
     const body = {
       grant_type: "password",
-      client_id: "4",
-      client_secret: "ObaST7ahLu5q0Q1YIfYDnuTkqQUhSHfBPhAQvpKy",
+      client_id: "1",
+      client_secret: "FLlF2Oamj0BfdkitldKE8qt4sNM7Pi0TGtowPFVy",
       username: credentials.email,
       password: credentials.password
     }
@@ -72,7 +73,22 @@ export class AuthService {
 
   }
 
+
+  modificarPerfil(credentials: any, id: number): Observable<any> {  
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+
+    const body = {
+      cumpleanos: credentials.cumpleanos,
+      acercademi: credentials.acercademi
+    };
+
+    return this.http.put(`${this.modificacionUrl}/${id}`, body, httpOptions);
+  }
+}
+
   
 
-}
+
 

@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TareasController;
+use App\Http\Controllers\PerfilController;
+use Illuminate\Support\Facades\Auth;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +27,8 @@ Route::prefix('v1')->group(function(){
     Route::post("/tarea",[TareasController::class, "crearTarea"]);
     Route::delete("/tarea/{id}",[TareasController::class, "borrarTarea"]);
     Route::put("/tarea/{id}",[TareasController::class, "modificarTarea"]);
+
+  
 });
 
 

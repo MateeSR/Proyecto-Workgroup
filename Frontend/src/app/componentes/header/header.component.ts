@@ -3,10 +3,9 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { AuthService } from '../Servicios/auth.service';
-import { StatusService } from '../Servicios/status.service';
+import { AuthService } from 'src/app/Servicios/auth.service';
+import { StatusService } from 'src/app/Servicios/status.service';
 import { Router } from '@angular/router';
-import { LoginComponent } from '../login/login.component';
 
 
 

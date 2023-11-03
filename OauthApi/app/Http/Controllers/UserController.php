@@ -30,6 +30,8 @@ class UserController extends Controller
         return $this -> crearUsuario($request);
         
     }
+    
+
 
     private function crearUsuario($request){
         $user = new User();
@@ -38,8 +40,22 @@ class UserController extends Controller
         $user -> email = $request -> post("email");
         $user -> password = Hash::make($request -> post("password"));   
         $user -> save();
+
+        return $user;
+
+    }
+
+    public function modificarPerfil (Request $request, $idUsuario) {
+
+        $user = User::findOrFail($idUsuario);
+
+        $user -> cumpleanos = $request -> cumpleanos;
+        $user -> acercademi = $request -> acercademi;
+        $user -> save();
+    
         return $user;
     }
+
 
     public function validarToken(Request $request){
         return auth('api')->user();
@@ -48,12 +64,10 @@ class UserController extends Controller
     public function logout(Request $request){
         $request->user()->token()->revoke();
         return ['message' => 'Token Revoked'];
-        
-        
+               
     }
 
-
-
+   
 
 
 

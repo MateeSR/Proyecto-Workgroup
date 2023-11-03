@@ -1,0 +1,53 @@
+<div class="app-container"> 
+    <app-header></app-header>
+    <div>
+        <div class="col">
+            <p class="miperfil">
+                Mi perfil
+            </p>
+        </div>
+        <div class="container">
+            <div class="row">
+                
+              <div class="col col-lg-2 bordeColumna">
+              
+              </div>
+              <div class="col bordeColumna">
+                <br>
+                <div class="row">
+                    <div class="col col-lg-2">
+                        <button class="botonCrear btn btn-dark" routerLink="/modificarPerfil" >Modificar perfil</button>
+                    </div>
+                </div>
+                <br>
+                
+                <div class="col">
+                    <p>Nombre:  {{ usuario.nombre  }} {{ usuario.apellido  }} </p>
+                    <hr>
+                </div>
+                
+                
+                <br>
+
+
+                <div class="col">
+                    <p>Acerca de mi: {{ usuario.acercademi }}  </p>
+                    <hr>
+                </div>
+                <br>
+
+              
+
+                <div class="col">
+                    <p>Cumpleaños: {{ usuario.cumpleanos }}</p> 
+                    <hr>
+                </div>
+                <br>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+</div>
