@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TareasController;
-use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\GruposController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -28,10 +28,11 @@ Route::prefix('v1')->group(function(){
     Route::delete("/tarea/{id}",[TareasController::class, "borrarTarea"]);
     Route::put("/tarea/{id}",[TareasController::class, "modificarTarea"]);
 
-  
+    Route::get("/grupo", [GruposController::class, "listarGrupos"]);
+    Route::get("/grupo/{id}", [GruposController::class, "listarUnGrupo"]);
+    Route::post("/grupo",[GruposController::class, "crearGrupo"]);
+    Route::delete("/grupo/{id}",[GruposController::class, "borrarGrupo"]);
+    Route::put("/grupo/{id}",[GruposController::class, "modificarGrupo"]);
+
 });
 
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
