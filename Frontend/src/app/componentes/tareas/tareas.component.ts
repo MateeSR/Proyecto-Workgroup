@@ -12,7 +12,6 @@ import { Tarea } from 'src/app/Clases/tarea';
 export class TareasComponent implements OnInit {
   id:any;
   tareas:any;
-  modalTarea: any;
   tarea = new Tarea();
   
 

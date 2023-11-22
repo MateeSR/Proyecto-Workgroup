@@ -10,210 +10,67 @@
 
 }
 
-.div {
-    display: flex;
-    flex-direction: column;
-    fill: #f2f3f5;
-    overflow: hidden;
-    align-self: stretch;
-    position: relative;
-    display: flex;
-    min-height: 741px;
-    width: 100%;
-    padding: 18px 20px 97px;
-  }
-  @media (max-width: 991px) {
-    .div {
-      max-width: 100%;
-    }
-  }
-  .img {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  .div-2 {
-    position: relative;
-    align-self: center;
-    display: flex;
-    width: 100%;
-    max-width: 974px;
-    flex-direction: column;
-  }
-  @media (max-width: 991px) {
-    .div-2 {
-      max-width: 100%;
-    }
-  }
-  .div-3 {
-    color: #000;
-    text-align: center;
-    letter-spacing: -1.26px;
-    align-self: start;
-    margin-left: 22px;
-    max-width: 550px;
-    font: 400 36px/179% Lohit Devanagari, -apple-system, Roboto, Helvetica,
-      sans-serif;
-  }
-  @media (max-width: 991px) {
-    .div-3 {
-      max-width: 100%;
-    }
-  }
-  .div-4 {
-    border: 1px solid #828282;
-    background-color: #fff;
-    align-self: center;
-    display: flex;
-    margin-top: 24px;
-    width: 100%;
-    flex-grow: 1;
-    padding-top: 9px;
-    flex-direction: column;
-  }
-  @media (max-width: 991px) {
-    .div-4 {
-      max-width: 100%;
-    }
-  }
-  .div-5 {
-    color: #000;
-    letter-spacing: -0.7px;
-    align-self: start;
-    margin-left: 29px;
-    white-space: nowrap;
-    font: 400 20px/179% -apple-system, Roboto, Helvetica,
-      sans-serif;
-  }
-  @media (max-width: 991px) {
-    .div-5 {
-      margin-left: 10px;
-      white-space: initial;
-    }
-  }
-  .div-6 {
-    background-color: rgba(130, 130, 130, 0.5);
-    align-self: stretch;
-    margin-top: 14px;
-    width: 100%;
-    height: 2px;
-  }
-  @media (max-width: 991px) {
-    .div-6 {
-      max-width: 100%;
-    }
-  }
-  .div-7 {
-    align-self: end;
-    margin-right: 24px;
-    width: 671px;
-    max-width: 100%;
-  }
-  @media (max-width: 991px) {
-    .div-7 {
-      margin-right: 10px;
-    }
-  }
-  .div-8 {
-    gap: 20px;
-    display: flex;
-  }
-  @media (max-width: 991px) {
-    .div-8 {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0px;
-    }
-  }
-  .column {
-    display: flex;
-    flex-direction: column;
-    line-height: normal;
-    width: 1%;
-    margin-left: 0px;
-  }
-  @media (max-width: 991px) {
-    .column {
-      width: 100%;
-    }
-  }
-  .div-9 {
-    background-color: rgba(130, 130, 130, 0.5);
-    width: 5px;
-    height: 519px;
-    margin: 0 auto;
-  }
-  @media (max-width: 991px) {
-    .div-9 {
-      margin-top: 23px;
-    }
-  }
-  .column-2 {
-    display: flex;
-    flex-direction: column;
-    line-height: normal;
-    width: 99%;
-    margin-left: 20px;
-  }
-  @media (max-width: 991px) {
-    .column-2 {
-      width: 100%;
-    }
-  }
-  .div-10 {
-    display: flex;
-    flex-direction: column;
-    margin: auto 0;
-  }
-  @media (max-width: 991px) {
-    .div-10 {
-      max-width: 100%;
-      margin-top: 40px;
-    }
-  }
-  .div-11 {
-    color: #000;
-    letter-spacing: -0.84px;
-    align-self: start;
-    width: 515px;
-    max-width: 100%;
-    font: 400 24px/179% Lohit Devanagari, -apple-system, Roboto, Helvetica,
-      sans-serif;
-  }
-  .div-12 {
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-    text-align: center;
-    letter-spacing: -0.84px;
-    align-self: end;
-    position: relative;
-    white-space: nowrap;
-    fill: #000;
-    stroke-width: 1px;
-    stroke: #000;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    overflow: hidden;
-    aspect-ratio: 3.056603773584906;
-    margin-top: 274px;
-    width: 132px;
-    max-width: 100%;
-    flex-grow: 1;
-    font: 400 24px/179% Lohit Devanagari, -apple-system, Roboto, Helvetica,
-      sans-serif;
-  }
-  @media (max-width: 991px) {
-    .div-12 {
-      white-space: initial;
-      margin-top: 40px;
-    }
-  }
-  .div-13 {
-    position: relative;
-  }
-  .botonCrear {
-    background-color: black;  
-    
+.miperfil {
+  color: #000;
+      letter-spacing: -1.26px;
+      margin-left: 350px;
+      font: 400 36px/179% Lohit Devanagari, -apple-system, Roboto, Helvetica,
+        sans-serif;
 }
+
+.miperfil {
+  color: #000;
+      letter-spacing: -1.26px;
+      margin-left: 350px;
+      font: 400 36px/179% Lohit Devanagari, -apple-system, Roboto, Helvetica,
+        sans-serif;
+}
+
+.miembros {
+  color: #000;
+  letter-spacing: -1.26px;
+  margin-left: 20px;
+  font: 400 36px/179% Lohit Devanagari, -apple-system, Roboto, Helvetica,
+    sans-serif;
+
+
+}
+.contenido {
+  color: #000;
+  letter-spacing: -1.26px;
+  margin-left: 20px;
+  font: 200 36px/179% Lohit Devanagari, -apple-system, Roboto, Helvetica,
+    sans-serif;
+
+}
+
+
+
+.bordeColumna {
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: #828282;
+  border-style:solid;
+  min-height: 700px;
+
+}
+
+.bordeColumnaVencimiento {
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: #828282;
+  border-style:solid;
+  margin-left: 0px;
+  font: 400 24px/179% Lohit Devanagari, -apple-system, Roboto, Helvetica,
+    sans-serif;
+
+}
+
+
+
+
+
+.botonCrear {
+  background-color: black;  
+}
+

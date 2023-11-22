@@ -20,12 +20,18 @@
             />
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+        <li class="nav-item dropdown d-flex flex-row">
+          <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
             <fa-icon [icon]="faUsers" class="fa-2xl">
             </fa-icon>
-        </a>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="/grupos"><p class="perfil">Grupos</p></a>
+            </li>
+          </ul>
         </li>
+        
       </ul>
     </div>
 
@@ -61,7 +67,7 @@
           
           <fa-icon [icon]="faUser" class="fa-2xl">
           </fa-icon>
-          <p class="perfil">{{ usuario.nombre }}</p>
+          <p class="perfil">{{  usuario.nombre }}  </p>
         </a>
 
         <ul class="dropdown-menu dropdownPerfil">

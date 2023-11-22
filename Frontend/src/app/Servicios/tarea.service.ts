@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class TareaService {
   
-  private url = 'http://127.0.0.1:8000/api/v1/tarea/';
+  private url = 'http://localhost:8000/api/v1/tarea/';
+  private userCache = "http://localhost:8000/api/v1/ashe"
+
 
   constructor(private httpClient:HttpClient) { }
 
@@ -37,5 +39,12 @@ export class TareaService {
        };
 
       return this.httpClient.put<Tarea>(this.url + tarea.id + '/', tarea, httpOptions);
+    }
+
+    obtenerDatosUserCache() {
+    
+
+      return this.httpClient.get(this.userCache)
+  
     }
 }

@@ -1,0 +1,76 @@
+<div class="app-container">
+    <app-header></app-header>
+
+    <div>
+      <div class="col">
+          <p class="miperfil">
+              Grupo - {{ grupo.nombre  }} 
+              <button type="button" class=" botonCrear btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" >Añadir miembro</button>
+          </p>
+      </div>
+
+      
+      <div class="container">
+          <div class="row">
+              
+            <div class="col col-lg-3 bordeColumna">
+              <div class="row foto">
+              </div>
+              <div class="descripcion">
+               
+                Descripcion: {{ grupo.descripcion }}
+              </div>
+
+            </div>
+            <div class="col bordeColumna">
+              <br>
+              <div class="miembrosdelgrupo">
+                <div class="row">
+                    <div class="col col-lg-2">
+                      <p class="miembros" >
+                      Miembros:  
+                      </p>
+                    </div>
+                </div>
+                <br>
+                
+                <div class="col" *ngFor="let integrantes of integrantes">
+                    <ul>
+                      <li> Miembro: {{ integrantes.nombre }} {{ integrantes.apellido  }}</li>
+                    </ul>
+                    
+                </div>
+                
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Añada el usuario</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form (submit)="funcionIntegrarGrupo()">
+            <div class="modal-body">
+              <select class="form-control" [(ngModel)]="integra.id_usuario" name="id_usuario">
+                <option class="form-control" value="" disabled selected>Selecciona el usuario que quiere que este en el grupo</option>
+                <option *ngFor="let users of users" [value]="users.id">{{users.id}}  {{ users.nombre }} {{ users.apellido }} - {{ users.email }}</option>
+            </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Añadir</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+</div>
+
+

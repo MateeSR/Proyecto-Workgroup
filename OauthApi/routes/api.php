@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PerfilController;
+use App\Http\Middleware\Autenticacion;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +21,14 @@ use App\Http\Controllers\PerfilController;
 Route::prefix('v1')->group(function ()
 {
     Route::post('/user',[UserController::class,"registro"]);
-    Route::get('/validate',[UserController::class,"validarToken"])->middleware('auth:api');
+    Route::get('/validate',[UserController::class,"validarToken"]);
 
     Route::get('/logout',[UserController::class,"logout"])->middleware('auth:api');
  
-    Route::get('/user', function(){return Auth::user();})->middleware('auth:api');
     Route::put("/user/{id}", [UserController::class, "modificarPerfil"])->middleware('auth:api');
+    Route::get("/user/{id}/grupos", [UserController::class, 'obtenerGrupoDeUsuario']);
+    Route::get("/users", [UserController::class, 'mostrarUsuarios']);
+
 
 
 });

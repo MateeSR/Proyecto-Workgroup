@@ -3,7 +3,7 @@
 
 FROM node:16-alpine AS build
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json ./
 
@@ -13,15 +13,14 @@ COPY . .
 
 RUN npm run build --prod
 
-RUN ls -alt
 
 # Etapa de producción
 
 
-FROM nginx:1.17.1-alpine
+FROM nginx:alpine
 
-COPY --from=build /usr/src/app/dist/frontend  /usr/share/nginx/html
-
-COPY --from=build /usr/src/app/nginx.conf /etc/ngnix/conf.d/default.conf
+COPY --from=build app/dist/frontend  /usr/share/nginx/html
 
 EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

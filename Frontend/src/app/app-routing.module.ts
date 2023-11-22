@@ -10,6 +10,9 @@ import { autenticacionGuard } from './guards/autenticacion.guard';
 import { ListarUnaTareaComponent } from './componentes/listar-una-tarea/listar-una-tarea.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ModificarperfilComponent } from './componentes/modificarperfil/modificarperfil.component';
+import { GruposComponent } from './componentes/grupos/grupos.component';
+import { CrearGrupoComponent } from './componentes/crear-grupo/crear-grupo.component';
+import { ListarUnGrupoComponent } from './componentes/listar-un-grupo/listar-un-grupo.component';
 
 
 
@@ -28,6 +31,23 @@ component: TareasComponent, canActivate: [autenticacionGuard]
   path: "tareas/modificarTarea/:id", 
   component: ModificarTareasComponent
 },
+
+{
+  path: "grupos",
+  component: GruposComponent
+},
+
+{
+  path: "crearGrupo",
+  component: CrearGrupoComponent
+
+},
+{
+  path: "grupos/:id",
+  component: ListarUnGrupoComponent
+
+},
+
 
 {
   path: "",
@@ -58,6 +78,7 @@ component: TareasComponent, canActivate: [autenticacionGuard]
   component: ModificarperfilComponent
 
 }
+
 
 
 

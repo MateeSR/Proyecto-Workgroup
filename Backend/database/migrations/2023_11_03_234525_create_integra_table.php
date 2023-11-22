@@ -13,7 +13,7 @@ class CreateIntegraTable extends Migration
      */
     public function up()
     {
-        Schema::create('integra', function (Blueprint $table) {
+        Schema::create('integras', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_usuario');
             $table->unsignedBigInteger('id_grupo');

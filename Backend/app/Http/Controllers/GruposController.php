@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Grupo;
+use App\Models\User;
+use App\Models\Integra;
 
 class GruposController extends Controller
 {
@@ -45,5 +47,6 @@ class GruposController extends Controller
 
     }
 
-
+    
+   
 }

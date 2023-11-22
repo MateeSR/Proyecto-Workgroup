@@ -5,14 +5,16 @@
 
     <div class="container mt-4 col-md-5">
         <h2>Crear tarea</h2>
-
         <div class="seccionFormulario row d-flex justify-content-center align-items-center">
             <div class="col-md-11">
                 <form (ngSubmit)="crearTarea()">
                     <br>
                     <input class="form-control" type="text" name="nombre" [(ngModel)]="tarea.nombre"  placeholder="Nombre de la tarea">
                     <br>
-                    <input class="form-control" type="text" name="grupo" [(ngModel)]="tarea.grupo" placeholder="Grupo">
+                    <select class="form-control" [(ngModel)]="tarea.id_grupo" name="id_grupo">
+                        <option class="form-control" value="" disabled selected>Select your option</option>
+                        <option *ngFor="let grupo of grupo" [value]="grupo.id">{{ grupo.nombre }}</option>
+                    </select>
                     <br>
                     <textarea class="form-control" name="descripcion" [(ngModel)]="tarea.contenido" rows="10" placeholder="Contenido" cols="40"></textarea>
                     <br>

@@ -8,11 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   
-  private url = 'http://127.0.0.1:8001/api/v1/user';
-  private loginUrl = "http://127.0.0.1:8001/oauth/token";
-  private logoutUrl = "http://127.0.0.1:8001/api/v1/logout";
-  private perfilUrl = "http://127.0.0.1:8001/api/v1/user";
-  private modificacionUrl = "http://127.0.0.1:8001/api/v1/user"
+  private url = 'http://localhost:8001/api/v1/user';
+  private loginUrl ="http://localhost:8001/oauth/token";
+  private logoutUrl = "http://localhost:8001/api/v1/logout";
+  private perfilUrl = "http://localhost:8001/api/v1/validate";
+  private modificacionUrl = "http://localhost:8001/api/v1/user"
+  private usersUrl = "http://localhost:8001/api/v1/users";
+
+
 
   constructor(private http: HttpClient) { }
   
@@ -20,7 +23,7 @@ export class AuthService {
     const body = {
       grant_type: "password",
       client_id: "1",
-      client_secret: "FLlF2Oamj0BfdkitldKE8qt4sNM7Pi0TGtowPFVy",
+      client_secret: "87e52xMyI3J6ouOVSllOOEwI4MuR9CrE714RAyR9",
       username: credentials.email,
       password: credentials.password
     }
@@ -62,17 +65,8 @@ export class AuthService {
 
     
   obtenerDatosUserLogueado() {
-    const httpOptions = {
-      headers: new HttpHeaders({ 
-        'Content-Type': 'application/json',
-        'Authorization' : 'Bearer ' + localStorage.getItem("accessToken") 
-      })
-    };
-
-    return this.http.get(this.perfilUrl, httpOptions)
-
+    return this.http.get(this.perfilUrl)
   }
-
 
   modificarPerfil(credentials: any, id: number): Observable<any> {  
     const httpOptions = {
@@ -86,7 +80,18 @@ export class AuthService {
 
     return this.http.put(`${this.modificacionUrl}/${id}`, body, httpOptions);
   }
+
+  verUsuariosLogueados() {
+
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+
+    return this.http.get(this.usersUrl)
+  }
+
 }
+
 
   
 

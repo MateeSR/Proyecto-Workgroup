@@ -1,0 +1,60 @@
+* {
+    font-family: 'Anek';
+    font-style: normal;
+}
+
+.app-container {
+    background-color: #F2F3F5;
+    font-family: 'Lohit';
+    min-height: 100vh;
+
+}
+
+.miperfil {
+    color: #000;
+        letter-spacing: -1.26px;
+        margin-left: 350px;
+        font: 400 36px/179% Lohit Devanagari, -apple-system, Roboto, Helvetica,
+          sans-serif;
+}
+
+
+.miembros {
+    color: #000;
+    letter-spacing: -1.26px;
+    margin-left: 20px;
+    font: 400 36px/179% Lohit Devanagari, -apple-system, Roboto, Helvetica,
+      sans-serif;
+
+
+}
+
+.foto {
+
+ background-color: #ffffff;
+    border-width: 1px;
+    border-color: #828282;
+    border-style:solid;
+    min-height: 300px;
+
+}
+
+.bordeColumna {
+    background-color: #ffffff;
+    border-width: 1px;
+    border-color: #828282;
+    border-style:solid;
+    min-height: 700px;
+
+
+}
+
+.botonCrear {
+    background-color: black;  
+    margin-left: 450px;
+    margin-top: 10px;
+
+        font: 300 24px/179% Lohit Devanagari, -apple-system, Roboto, Helvetica,
+          sans-serif;
+}
+

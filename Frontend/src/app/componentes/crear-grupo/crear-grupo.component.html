@@ -1,0 +1,24 @@
+
+<div class="app-container">
+
+    <app-header></app-header>
+
+    <div class="container mt-4 col-md-5">
+        <h2>Crear grupo</h2>
+        <div class="seccionFormulario row d-flex justify-content-center align-items-center">
+            <div class="col-md-11">
+                <form (ngSubmit)="crearGrupo()">
+                    <br>
+                    <input class="form-control" type="text" name="nombre" [(ngModel)]="grupo.nombre"  placeholder="Nombre del grupo">
+                    <br>
+                    <input class="form-control" type="text" name="descripcion" [(ngModel)]="grupo.descripcion"  placeholder="Descripcion">
+                    <br>
+                    <div class="row justify-content-end">
+                    <button type="submit"  class="botonCrear btn btn-dark ">Crear</button>
+                    </div>
+                    <br>
+                </form>
+            </div>
+        </div>
+</div>
+</div>

@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Lcobucci\JWT\Parser;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
+use Laravel\Passport\Token;
+
+
 
 
 
@@ -57,8 +62,15 @@ class UserController extends Controller
     }
 
 
-    public function validarToken(Request $request){
+    public function validarToken(){
         return auth('api')->user();
+
+    }
+
+    public function mostrarUsuarios() {
+        $users = User::all();
+
+        return $users;
     }
 
     public function logout(Request $request){
@@ -67,12 +79,8 @@ class UserController extends Controller
                
     }
 
-   
 
-
-
-
-
+    
 
 
 

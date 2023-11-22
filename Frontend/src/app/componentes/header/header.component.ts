@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit{
     
     }
 
+   
 
     obtenerUsuario() {
       this.api.obtenerDatosUserLogueado().subscribe((res) => {

@@ -18,6 +18,11 @@ import { HomeComponent } from './componentes/home/home.component';
 import { ListarUnaTareaComponent } from './componentes/listar-una-tarea/listar-una-tarea.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ModificarperfilComponent } from './componentes/modificarperfil/modificarperfil.component';
+import { GruposComponent } from './componentes/grupos/grupos.component';
+import { ModificarGruposComponent } from './componentes/modificar-grupos/modificar-grupos.component';
+import { ListarUnGrupoComponent } from './componentes/listar-un-grupo/listar-un-grupo.component';
+import { CrearGrupoComponent } from './componentes/crear-grupo/crear-grupo.component';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { ModificarperfilComponent } from './componentes/modificarperfil/modifica
     HomeComponent,
     ListarUnaTareaComponent,
     PerfilComponent,
-    ModificarperfilComponent
+    ModificarperfilComponent,
+    GruposComponent,
+    ModificarGruposComponent,
+    ListarUnGrupoComponent,
+    CrearGrupoComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
