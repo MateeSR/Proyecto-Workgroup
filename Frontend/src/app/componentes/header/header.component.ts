@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit{
   constructor(public api:AuthService, private router: Router, public status: StatusService) { }
+    rol:any;
 
     usuario: any;
 
@@ -28,6 +29,7 @@ export class HeaderComponent implements OnInit{
 
     ngOnInit() {
       this.obtenerUsuario();
+      this.obtenerRolDeUsuario();
     }
 
     public loggedIn: boolean=false;
@@ -41,6 +43,16 @@ export class HeaderComponent implements OnInit{
     
     }
 
+    obtenerRolDeUsuario() {
+      this.api.obtenerRolesUsuario().subscribe((res: string[]) => {
+          this.rol = res;
+          console.log('Roles del usuario:', this.rol.join(', '));
+
+        }
+      );
+
+    }
+    
    
 
     obtenerUsuario() {

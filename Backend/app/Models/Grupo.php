@@ -16,7 +16,7 @@ class Grupo extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'integra', 'id_grupo', 'id_usuario');
+        return $this->belongsToMany(User::class, 'integras', 'id_grupo', 'id_usuario');
     }
 
     public function tareas()

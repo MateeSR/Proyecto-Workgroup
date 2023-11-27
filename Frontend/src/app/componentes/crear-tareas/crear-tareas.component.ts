@@ -37,21 +37,28 @@ export class CrearTareasComponent implements OnInit {
     });
 
   }
+  enviarACorreo() {
+    this.tareaService.enviarACorreo().subscribe(
+      res => {
+        console.log('Respuesta del servidor:', res);
+      },
+      error => {
+        console.error('Error al enviar tarea:', error);
+      }
+    );
+
+  }
   crearTarea() {
     this.tareaService.crearTarea(this.tarea).subscribe(res => {
-      this.listarTareas();
+      this.listarTareas();  
+      this.enviarACorreo();
+      
       this.router.navigate(['tareas']);
    
     })
     }
 
-    obtenerDatosCache() {
-      this.tareaService.obtenerDatosUserCache().subscribe((res) => {
-        console.log(res);
-      })
-
-    }
-    
+  
     
     
   }

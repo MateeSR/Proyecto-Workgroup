@@ -9,6 +9,10 @@
         <div class="col-md-11">
             <form (ngSubmit)="modificarPerfil()">
                 <br>
+                <input class="form-control" type="text" name="nombre" [(ngModel)]="usuario.nombre"  placeholder="Nombre">
+                <br>
+                <input class="form-control" type="text" name="apellido" [(ngModel)]="usuario.apellido"  placeholder="Apellido">
+                <br>
                 <input class="form-control" type="text" name="acercademi" [(ngModel)]="usuario.acercademi"  placeholder="Sobre mi...">
                 <br>
                 <input class="form-control" [(ngModel)]="usuario.cumpleanos" name="cumpleanos" placeholder="Fecha de cumpleaños" type="text" onfocus="(this.type='date')" onblur="(this.type= this.value ? 'date' : 'text')">

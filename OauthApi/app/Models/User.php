@@ -49,6 +49,16 @@ class User extends Authenticatable
 
     public function grupos()
     {
-        return $this->belongsToMany(Grupo::class, 'integran', 'id_usuario', 'id_grupo');
+        return $this->belongsToMany(Grupo::class, 'integras', 'id_usuario', 'id_grupo');
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Roles::class, 'posee', 'id_usuario', 'id_rol');
+    }
+
+    public function tieneRole($role)
+    {
+        return $this->roles()->where('rol', $role)->exists();
     }
 }

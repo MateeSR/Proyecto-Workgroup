@@ -20,15 +20,16 @@
             />
           </a>
         </li>
-        <li class="nav-item dropdown d-flex flex-row">
+        <li class="nav-item dropdown d-flex flex-row"  >
+         
           <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
             <fa-icon [icon]="faUsers" class="fa-2xl">
             </fa-icon>
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" routerLink="/grupos"><p class="perfil">Grupos</p></a>
-            </li>
+              <a class="dropdown-item" routerLink="/grupos" ><p class="perfil" *ngIf="rol && rol.includes('admin')">Grupos</p></a>
+              <a class="dropdown-item" routerLink="/misgrupos" ><p class="perfil" *ngIf="rol && rol.includes('normal')">Mis Grupos</p></a>            </li>
           </ul>
         </li>
         
@@ -45,7 +46,9 @@
 
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" routerLink="/tareas"><p class="perfil">Tareas</p></a>
+            <a class="dropdown-item" routerLink="/tareas" ><p class="perfil" *ngIf="rol && rol.includes('admin')">Tareas</p></a>
+            <a class="dropdown-item" routerLink="/mistareas" ><p class="perfil" *ngIf="rol && rol.includes('normal')">Mis Tareas</p></a>
+
           </li>
         </ul>
 
@@ -62,22 +65,22 @@
       </li>
 
       <li class="nav-item dropdown d-flex flex-row">
-
         <a class="nav-link d-flex flex-row" href="#" role="button" data-bs-toggle="dropdown">
-          
-          <fa-icon [icon]="faUser" class="fa-2xl">
-          </fa-icon>
-          <p class="perfil">{{  usuario.nombre }}  </p>
+          <fa-icon [icon]="faUser" class="fa-2xl"></fa-icon>
+          <p class="perfil">{{ usuario.nombre }}  ({{ rol }})</p>
         </a>
-
+      
         <ul class="dropdown-menu dropdownPerfil">
           <li>
-            <a class="dropdown-item" routerLink="/perfil"><p class="perfil">Perfil</p></a>
-            <a class="dropdown-item" (click)="logout()"><p class="perfil">Cerrar sesion</p></a>
+            <a class="dropdown-item" routerLink="/perfil">
+              <p class="perfil">Perfil</p>
+            </a>
+            <a class="dropdown-item" (click)="logout()">
+              <p class="perfil">Cerrar sesión</p>
+            </a>
           </li>
         </ul>
       </li>
-      
       
   
       

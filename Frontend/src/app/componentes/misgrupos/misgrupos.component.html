@@ -1,0 +1,37 @@
+
+  
+<div class="app-container">
+    <app-header></app-header>
+    
+        <div class="container-fluid mt-4 col-md-5">
+            <h2>Grupos</h2>
+            <div class="d-flex justify-content-end">  
+  
+            </div>
+            <br>
+            <div class="seccionFormulario col ">
+                <div class="d-flex justify-content-center align-items-center " *ngFor="let grupo of grupo" >
+                    <div class="d-flex col-md-11" >
+                        <div class="d-flex" >
+                            <div class="mr-auto p-2" >
+                                <div>
+                                    <a routerLink="/grupos/{{ grupo.id }}" class="d-flex">
+                     
+                                            <fa-icon  [icon]="faImage" [size]="'4x'" class="mr-3">
+                                            </fa-icon>
+                                            <div>
+                                                <p class="nombre">{{ grupo.nombre }}</p>
+                                            </div>
+                                            
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    </div>
+    

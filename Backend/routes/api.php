@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TareasController;
 use App\Http\Controllers\GruposController;
 use App\Http\Controllers\IntegraController;
+use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\Autenticacion;
 
@@ -28,16 +29,20 @@ Route::prefix('v1')->group(function(){
     Route::post("/tarea",[TareasController::class, "crearTarea"])->middleware('Autenticacion');
     Route::delete("/tarea/{id}",[TareasController::class, "borrarTarea"]);
     Route::put("/tarea/{id}",[TareasController::class, "modificarTarea"]);
+    Route::get("/tareasgrupo/{id}",[TareasController::class, "obtenerTareasDeGrupo"]);
+    Route::get("/tareasuser", [TareasController::class, "obtenerTareasDelUsuario"]);
+    Route::post("/enviar",[TareasController::class, "enviarACorreo"]);
+
 
     Route::get("/grupo", [GruposController::class, "listarGrupos"])->middleware('Autenticacion');
     Route::get("/grupo/{id}", [GruposController::class, "listarUnGrupo"]);
     Route::post("/grupo",[GruposController::class, "crearGrupo"]);
     Route::delete("/grupo/{id}",[GruposController::class, "borrarGrupo"]);
     Route::put("/grupo/{id}",[GruposController::class, "modificarGrupo"]);
+    Route::get("/misgrupos", [GruposController::class, "obtenerGruposDeUsuario"]);
 
     Route::post("/integra/{id}", [IntegraController::class, "añadirMiembro"])->middleware('Autenticacion');
     Route::get("/integra/{id}", [IntegraController::class, "obtenerUsuariosDelGrupo"])->middleware('Autenticacion');
-
 
 });
 

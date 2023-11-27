@@ -9,13 +9,22 @@ import { Observable } from 'rxjs';
 export class TareaService {
   
   private url = 'http://localhost:8000/api/v1/tarea/';
-  private userCache = "http://localhost:8000/api/v1/ashe"
-
+  private tareasGrupoURL = 'http://localhost:8000/api/v1/tareasgrupo/';
+  private tareasUsuarioURL = 'http://localhost:8000/api/v1/tareasuser/';
+  private correoUrl = 'http://localhost:8000/api/v1/enviar';
 
   constructor(private httpClient:HttpClient) { }
 
    listarTareas():Observable<Tarea> {
       return this.httpClient.get<Tarea>(this.url);
+   }
+   listarTareasDeGrupo(id: number):Observable<Tarea>  {
+      return this.httpClient.get<Tarea>(this.tareasGrupoURL + id);
+   }
+   listarTareasDeUsuario():Observable<Tarea> {
+
+     return this.httpClient.get<Tarea>(this.tareasUsuarioURL);
+
    }
    
    crearTarea(tarea:Tarea):Observable<Tarea> {
@@ -41,10 +50,10 @@ export class TareaService {
       return this.httpClient.put<Tarea>(this.url + tarea.id + '/', tarea, httpOptions);
     }
 
-    obtenerDatosUserCache() {
-    
-
-      return this.httpClient.get(this.userCache)
-  
+    enviarACorreo(): Observable<any> {
+      return this.httpClient.post(this.correoUrl, {});
     }
+
+
+    
 }

@@ -7,12 +7,17 @@ import { LoginComponent } from './componentes//login/login.component';
 import { RegistroComponent } from './componentes//registro/registro.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { autenticacionGuard } from './guards/autenticacion.guard';
+import { NormalRoleGuard } from './guards/normal-role.guard';
 import { ListarUnaTareaComponent } from './componentes/listar-una-tarea/listar-una-tarea.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ModificarperfilComponent } from './componentes/modificarperfil/modificarperfil.component';
 import { GruposComponent } from './componentes/grupos/grupos.component';
 import { CrearGrupoComponent } from './componentes/crear-grupo/crear-grupo.component';
 import { ListarUnGrupoComponent } from './componentes/listar-un-grupo/listar-un-grupo.component';
+import { MisgruposComponent } from './componentes/misgrupos/misgrupos.component';
+import { MistareasComponent } from './componentes/mistareas/mistareas.component';
+import { TareasgruposComponent } from './componentes/tareasgrupos/tareasgrupos.component';
+import { ModificarGruposComponent } from './componentes/modificar-grupos/modificar-grupos.component';
 
 
 
@@ -36,7 +41,11 @@ component: TareasComponent, canActivate: [autenticacionGuard]
   path: "grupos",
   component: GruposComponent
 },
+{
+  path: "misgrupos",
+  component: MisgruposComponent
 
+},
 {
   path: "crearGrupo",
   component: CrearGrupoComponent
@@ -47,11 +56,24 @@ component: TareasComponent, canActivate: [autenticacionGuard]
   component: ListarUnGrupoComponent
 
 },
+{
+  path: "mistareas", 
+  component: MistareasComponent 
+}, 
+{
+  path: "tareasgrupo/:id",
+  component: TareasgruposComponent
 
+},
 
 {
   path: "",
   component: HomeComponent, canActivate: [autenticacionGuard]
+},
+{
+  path: "modificarGrupo/:id",
+  component: ModificarGruposComponent
+
 },
 
 {

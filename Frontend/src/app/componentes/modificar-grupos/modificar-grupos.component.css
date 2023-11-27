@@ -1,0 +1,29 @@
+* {
+    font-family: 'Anek';
+    font-style: normal;
+}
+
+.app-container {
+    background-color: #F2F3F5;
+    font-family: 'Lohit';
+    min-height: 100vh;
+
+}
+.seccionFormulario {
+    background-color: #ffffff;
+    border-width: 1px;
+    border-color: #828282;
+    border-style:double;
+
+}
+
+input, textarea {
+    background-color: #D9D9D9;
+
+
+}
+.botonCrear {
+    background-color: black;  
+    width: 13%;
+    margin-right: 11px;
+}

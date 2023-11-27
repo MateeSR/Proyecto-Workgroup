@@ -1,0 +1,30 @@
+
+  
+<div class="app-container">
+    <app-header></app-header>
+    
+        <div class="container-fluid mt-4 col-md-5">
+            <h2>Listado de tareas</h2>
+            <div class="d-flex justify-content-end">  
+                
+            </div>
+            <br>
+            <div class="seccionFormulario col ">
+                <div class="d-flex justify-content-center align-items-center " *ngFor="let tareas of tareas" >
+                    <div class="d-flex col-md-11" >
+                        <div class="d-flex" >
+                            <div class="mr-auto p-2" >
+                                <div>
+                                    <a routerLink="/tareas/{{ tareas.id }}">
+                                        <p> {{ tareas.nombre }} - {{ tareas.grupo }} {{ tareas.fecha_limite }}</p>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    </div>

@@ -6,9 +6,21 @@ use Illuminate\Http\Request;
 use App\Models\Grupo;
 use App\Models\User;
 use App\Models\Integra;
+use Illuminate\Support\Facades\Http;
 
 class GruposController extends Controller
+
 {
+
+    public function obtenerIdUsuario(Request $request) {
+
+        $tokenHeader = [ "Authorization" => $request -> header("Authorization")];
+        $response = Http::withHeaders($tokenHeader)->get(getenv("API_AUTH_URL") . "/validate");
+        $userData = $response->json();
+        return $userData['id'];
+
+    }  
+
     public function crearGrupo(Request $request) {
         $grupo = new Grupo();
 
@@ -47,6 +59,17 @@ class GruposController extends Controller
 
     }
 
+
+    public function obtenerGruposDeUsuario(Request $request) {
+        $userId = $this->obtenerIdUsuario($request);
+
+        $usuario = User::find($userId);
     
+        
+        $grupos = $usuario->grupos;
+   
+        return $grupos;
+        
+        }
    
 }

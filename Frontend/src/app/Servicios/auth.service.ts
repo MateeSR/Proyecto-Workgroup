@@ -14,16 +14,18 @@ export class AuthService {
   private perfilUrl = "http://localhost:8001/api/v1/validate";
   private modificacionUrl = "http://localhost:8001/api/v1/user"
   private usersUrl = "http://localhost:8001/api/v1/users";
+  private rolUrl = "http://localhost:8001/api/v1/user/rol"
 
+  rol:any;
 
 
   constructor(private http: HttpClient) { }
-  
+
   sendLogin(credentials: any){
     const body = {
       grant_type: "password",
       client_id: "1",
-      client_secret: "87e52xMyI3J6ouOVSllOOEwI4MuR9CrE714RAyR9",
+      client_secret: "aAuJslVtW7hxFpR2lbiERq954xGvWFnyyO0jcepr",
       username: credentials.email,
       password: credentials.password
     }
@@ -74,6 +76,8 @@ export class AuthService {
     };
 
     const body = {
+      nombre: credentials.nombre,
+      apellido:credentials.apellido,
       cumpleanos: credentials.cumpleanos,
       acercademi: credentials.acercademi
     };
@@ -90,6 +94,15 @@ export class AuthService {
     return this.http.get(this.usersUrl)
   }
 
+
+
+  obtenerRolesUsuario():Observable<any>{
+    return this.http.get(this.rolUrl);
+  }
+
+  tieneRol(rol: string): boolean {
+    return this.rol && this.rol.includes(rol);
+  }
 }
 
 

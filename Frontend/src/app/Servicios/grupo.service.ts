@@ -10,13 +10,18 @@ export class GrupoService {
   grupo:any;
   private url = 'http://localhost:8000/api/v1/grupo/';
   private urlUserGrupo = 'http://localhost:8000/api/v1/integra/';
-
+  private misGruposUrl = 'http://localhost:8000/api/v1/misgrupos/';
 
   constructor(private httpClient:HttpClient) { }
 
   listarGrupos():Observable<Grupo> {
    
     return this.httpClient.get<Grupo>(this.url);
+  }
+
+  listarMisGrupos():Observable<Grupo> {
+    return this.httpClient.get<Grupo>(this.misGruposUrl);
+
   }
 
   crearGrupo(grupo:Grupo):Observable<Grupo> {

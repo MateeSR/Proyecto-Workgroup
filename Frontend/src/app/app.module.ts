@@ -23,6 +23,11 @@ import { ModificarGruposComponent } from './componentes/modificar-grupos/modific
 import { ListarUnGrupoComponent } from './componentes/listar-un-grupo/listar-un-grupo.component';
 import { CrearGrupoComponent } from './componentes/crear-grupo/crear-grupo.component';
 import { PopupComponent } from './popup/popup.component';
+import { NormalRoleGuard } from './guards/normal-role.guard';
+import { MisgruposComponent } from './componentes/misgrupos/misgrupos.component';
+import { MistareasComponent } from './componentes/mistareas/mistareas.component';
+import { TareasgruposComponent } from './componentes/tareasgrupos/tareasgrupos.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +46,10 @@ import { PopupComponent } from './popup/popup.component';
     ModificarGruposComponent,
     ListarUnGrupoComponent,
     CrearGrupoComponent,
-    PopupComponent
+    PopupComponent,
+    MisgruposComponent,
+    MistareasComponent,
+    TareasgruposComponent
   ],
   imports: [
     BrowserModule,
@@ -51,11 +59,13 @@ import { PopupComponent } from './popup/popup.component';
     FormsModule
   ],
   providers: [
+    [NormalRoleGuard],
     {
       provide: HTTP_INTERCEPTORS,
      useClass: TokenInterceptor,
       multi: true
     }
+    
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA],

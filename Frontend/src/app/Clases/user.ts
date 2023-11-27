@@ -4,4 +4,5 @@ export class User {
     email:any;
     password:any;
     c_password:any;
+
 }

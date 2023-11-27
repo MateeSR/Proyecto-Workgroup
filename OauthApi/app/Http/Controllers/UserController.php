@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Roles;
+use App\Http\Controllers\EmailController;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -36,7 +38,7 @@ class UserController extends Controller
         
     }
     
-
+   
 
     private function crearUsuario($request){
         $user = new User();
@@ -44,7 +46,9 @@ class UserController extends Controller
         $user -> apellido = $request -> post("apellido");
         $user -> email = $request -> post("email");
         $user -> password = Hash::make($request -> post("password"));   
+
         $user -> save();
+        $user -> roles()->attach(Roles::where('rol', 'normal')->first());
 
         return $user;
 
@@ -54,6 +58,8 @@ class UserController extends Controller
 
         $user = User::findOrFail($idUsuario);
 
+        $user -> nombre = $request -> nombre;
+        $user -> apellido = $request -> apellido;
         $user -> cumpleanos = $request -> cumpleanos;
         $user -> acercademi = $request -> acercademi;
         $user -> save();
@@ -80,6 +86,15 @@ class UserController extends Controller
     }
 
 
+    public function obtenerRolUsuario() {
+        $userId = Auth::id();
+        $roles = User::find($userId)->roles()->pluck('rol');
+
+        return $roles;
+
+
+
+    }
     
 
 

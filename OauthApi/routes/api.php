@@ -28,6 +28,7 @@ Route::prefix('v1')->group(function ()
     Route::put("/user/{id}", [UserController::class, "modificarPerfil"])->middleware('auth:api');
     Route::get("/user/{id}/grupos", [UserController::class, 'obtenerGrupoDeUsuario']);
     Route::get("/users", [UserController::class, 'mostrarUsuarios']);
+    Route::get("/user/rol", [UserController::class, 'obtenerRolUsuario'])->middleware('auth:api');
 
 
 

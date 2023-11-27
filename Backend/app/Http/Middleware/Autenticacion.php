@@ -34,7 +34,7 @@ class Autenticacion
 
 
         if($response -> successful()){
-            Cache::put($token, $response -> json(), 500);
+            Cache::put($token, $response -> json(), 5000);
             return $next($request);
         }
 
