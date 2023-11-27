@@ -1,0 +1,48 @@
+version: "3"
+services:
+  OauthApi:
+    image: ggmartinez/laravel:php-82
+    ports:
+      - 8001:8000
+    volumes:
+      - ./OauthApi:/app
+  Backend:
+    image: ggmartinez/laravel:php-82
+    ports:
+      - 8000:8000
+    volumes:
+      - ./Backend:/app
+  Frontend:
+    image: workgroup-docker-apache
+    ports:
+      - 3000:80
+  mysql:
+    image: mysql:8
+    ports: 
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=workgroup
+      - MYSQL_ROOT_PASSWORD=root
+
+    volumes:
+      - ./mysql:/var/lib/mysql
+  memcached:
+    image: memcached
+    ports:
+      - "11211:11211"
+  smtp4dev:
+    image: rnwood/smtp4dev:v3
+    restart: always
+    ports:
+      - '5000:80'
+      - '25:25'
+      - '143:143'
+    volumes:
+        - smtp4dev-data:/smtp4dev
+    environment:
+      - ServerOptions__HostName=smtp4dev
+volumes:
+  smtp4dev-data:
+
+
+
