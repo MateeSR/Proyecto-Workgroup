@@ -31,17 +31,6 @@ class TareaTest extends TestCase
     ];
 
 
-    public function setUp(): void
-    {
-        parent::setUp();
-    
-        Http::fake([
-            getenv("API_AUTH_URL") . "/validate" => Http::response(['id' => 1], 200),
-        ]);
-    }
-
-
-
     public function test_ListarTareas()
     {
         $response = $this
